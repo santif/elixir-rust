@@ -1,4 +1,4 @@
-FROM elixir:1.9-alpine
+FROM elixir:1.9.4-alpine
 
 RUN apk update && \
   apk upgrade --no-cache && \
@@ -11,7 +11,6 @@ RUN apk update && \
   mix local.hex --force
 
 ENV RUSTUP_HOME=/usr/local/rustup \
-  RUSTFLAGS="-C target-feature=-crt-static" \
   CARGO_HOME=/usr/local/cargo \
   PATH=/usr/local/cargo/bin:$PATH \
   RUST_VERSION=1.40.0
